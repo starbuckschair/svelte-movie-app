@@ -59,7 +59,7 @@
     </div>
 
     <div class="select">
-        <select>
+        <select bind:value={number}>
             {#each numbers as n (n)}
                 <option>{n}</option>
             {/each}
@@ -68,7 +68,7 @@
 
     <button 
         class="btn"
-        on:click={apply}> 
+        on:click={apply}>  
         Apply
     </button>
 </div>
@@ -76,7 +76,7 @@
 <style lang="scss">
     .search {
         display: grid;
-        grid-template-columns: 120px 120px 120px 120px 120px ;  
+        grid-template-columns: 1fr repeat(4, 120px);  
         grid-gap: 10px;      
         .text-field {
             display: inline-block;
