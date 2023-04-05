@@ -10,7 +10,8 @@
         },
         {
             href: '/movie/tt4520988',
-            name: 'Movie'
+            name: 'Movie',
+            path: '/movie/*'
         },
         {
             href: '/about',
@@ -23,14 +24,13 @@
     <Logo/>
     <nav>
         <ul>
-            {#each menus as {href, name}(name)}
+            {#each menus as {href, name, path}(name)}
                 <li>
-                    <a use:link use:active ={href} {href}>{name}</a>
+                    <a use:link use:active ={path} {href}>{name}</a>
                 </li>
             {/each}
         </ul>
     </nav>
-    HEADER!
 </header>
 
 <style lang="scss">
