@@ -25,5 +25,8 @@
     "postcss": "^8.4.21",
     "snowpack": "^3.8.8",
     "svelte": "^3.58.0"
+  },
+  "dependencies": {
+    "svelte-spa-router": "^3.3.0"
   }
 }
