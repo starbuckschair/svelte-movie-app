@@ -89,7 +89,4 @@
     header :global(a.active) {
         color: $color--primary !important; 
     }
-    :global(body) {
-        height: 3000px;
-    }
 </style>
