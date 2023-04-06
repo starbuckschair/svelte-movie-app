@@ -1,39 +1,44 @@
 <script>
-    import { link } from "svelte-spa-router";
+    import { link, push } from "svelte-spa-router";
     import active from "svelte-spa-router/active";
     import Logo from "~/components/Logo.svelte";
 
     const menus = [
         {
-            href: '/',
-            name: 'Search',
+            href: "/",
+            name: "Search",
         },
         {
-            href: '/movie/tt4520988',
-            name: 'Movie',
-            path: '/movie/*'
+            href: "/movie/tt4520988",
+            name: "Movie",
+            path: "/movie/*",
         },
         {
-            href: '/about',
-            name: 'About',
-            path: /^\/about/
-        }
-    ]
+            href: "/about",
+            name: "About",
+            path: /^\/about/,
+        },
+    ];
 </script>
 
 <header>
-    <Logo/>
+    <Logo />
     <nav>
         <ul>
-            {#each menus as {href, name, path}(name)}
+            {#each menus as { href, name, path } (name)}
                 <li>
-                    <a use:link use:active ={path} {href}>{name}</a>
+                    <a use:link use:active={path} {href}>{name}</a>
                 </li>
             {/each}
         </ul>
     </nav>
-    <div class = "user">
-        <img src="/assets/svelte.png" alt="">
+    <div
+        class="user"
+        on:click={event => 
+            {console.log(event)
+            push("/about?name=Netlify&email=hello@netlify.com&image=/assets/netlify.png")
+        }}>
+        <img src="/assets/svelte.png" alt="" />
     </div>
 </header>
 
@@ -46,13 +51,13 @@
         z-index: 9;
         display: flex;
         align-items: flex-end;
-        nav{
+        nav {
             margin-left: 40px;
-            ul{
+            ul {
                 display: flex;
                 li {
                     margin-left: 10px;
-                    &:first-child{
+                    &:first-child {
                         margin-left: 0;
                     }
                     a {
@@ -60,7 +65,7 @@
                         font-weight: 700;
                         color: $color--white-50;
                         text-decoration: none;
-                    };
+                    }
                 }
             }
         }
@@ -77,7 +82,7 @@
             bottom: 0;
             right: 40px;
             margin: auto;
-            transition: .4s;
+            transition: 0.4s;
             &:hover {
                 background-color: lighten($color--area, 20%);
             }
@@ -87,6 +92,6 @@
         }
     }
     header :global(a.active) {
-        color: $color--primary !important; 
+        color: $color--primary !important;
     }
 </style>
