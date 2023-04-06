@@ -8,7 +8,7 @@
     style="transform: scale({scale});"
     class:absolute
     class:fixed
-    class="loaing">
+    class="loading">
     <div class="sk-chase">
         <div class="sk-chase-dot" />
         <div class="sk-chase-dot" />

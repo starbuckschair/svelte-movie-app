@@ -20,7 +20,7 @@
 <a use:link href={`/movie/${movie.imdbID}`} class="movie">
     {#if imageLoading} 
         <Loader scale=".5"
-        absolute={true}/>
+        absolute/>
     {/if}
     <div class="poster" style="background-image: url({movie.Poster});">
         {#if movie.Poster === "N/A"}
