@@ -96,6 +96,14 @@
 <style lang="scss">
     .skeleton-loader {
         display: flex;
+        @media #{$mobile}{
+            display: block;
+        }
+        .poster {
+            @media #{$mobile} {
+                display: none;
+            }
+        }
         .skeletons {
             flex: 1;
             .skeleton {
@@ -127,6 +135,9 @@
     .movie-details {
         color: $color--white-50;
         display: flex;
+        @media #{$mobile} {
+            display: block;
+        }
     }
     .poster {
         flex-shrink: 0;
@@ -138,6 +149,15 @@
         background-position: center;
         background-size: cover;
         position: relative;
+        @media #{$tablet} {
+            width: 300px;
+            height: 300px * 3/2;
+            margin-right: 30px;
+        }
+        @media #{$mobile} {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
     }
     .specs {
         .title {
@@ -146,6 +166,9 @@
             color: $color--white;
             line-height: 1;
             margin-bottom: 30px;
+            @media #{$mobile} {
+                font-size: 50px;
+            }
         }
         .lables {
             color: $color--primary;
@@ -163,6 +186,11 @@
                     display: flex;
                     align-items: center;
                     margin-right: 32px;
+                    @media #{$tablet} {
+                        transform: scale(.85);
+                        transform-origin: left;
+                        margin-right: 0;
+                    }
                     img {
                         flex-shrink: 0;
                         margin-right: 6px;

@@ -34,10 +34,13 @@
     </nav>
     <div
         class="user"
-        on:click={event => 
-            {console.log(event)
-            push("/about?name=Netlify&email=hello@netlify.com&image=/assets/netlify.png")
-        }}>
+        on:click={(event) => {
+            console.log(event);
+            push(
+                "/about?name=Netlify&email=hello@netlify.com&image=%2Fassets%2Fnetlify.png"
+            );
+        }}
+    >
         <img src="/assets/svelte.png" alt="" />
     </div>
 </header>
@@ -51,8 +54,14 @@
         z-index: 9;
         display: flex;
         align-items: flex-end;
+        @media #{$mobile} {
+            padding: 14px 20px;
+        }
         nav {
             margin-left: 40px;
+            @media #{$mobile} {
+                display: none;
+            }
             ul {
                 display: flex;
                 li {
