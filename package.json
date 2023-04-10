@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "snowpack dev",
-    "dev:netlify": "netlify dev",
+    "dev:snowpack": "snowpack dev",
+    "dev": "netlify dev", 
     "build": "snowpack build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "browserslist": [
+  "browserslist": [  
     "> 1%",
     "last 2 versions"
   ],
